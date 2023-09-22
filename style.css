@@ -1,0 +1,1066 @@
+/*-------------------fuentestipograficas_________________*/
+@font-face {
+  font-family: Righteous-Regular;
+  src: url(https://cdn.glitch.global/6981d5f7-b02a-4bf3-b778-6ab7eea7c0a0/Righteous-Regular.ttf?v=1692965770566);
+}
+@font-face {
+  font-family:Nunito-semibold;
+  src: url(https://cdn.glitch.global/6981d5f7-b02a-4bf3-b778-6ab7eea7c0a0/NunitoSans_7pt_Expanded-SemiBold.ttf?v=1693503748027);
+}
+@font-face {
+  font-family:Nunito-ligth;
+  src: url(https://cdn.glitch.global/6981d5f7-b02a-4bf3-b778-6ab7eea7c0a0/NunitoSans_7pt_Condensed-Light.ttf?v=1693503834797);
+}
+
+/*-------------------fuentestipograficas_________________*/
+ #xd{
+    margin-left:10em;
+    margin-right:10em;
+  }
+a{
+  text-decoration:none;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: white;
+  
+  padding: none;
+  border: none;
+}
+#spline {
+  display: block;
+  border: solid red 2px;
+}
+
+#spline #logo {
+  border: solid red 2px;
+  display: none !important;
+}
+/*--------------------menu-------------------------*/
+#contenedorgeneral {
+  height: 500px;
+  background-color: white;
+  color: blue;
+}
+#contenedor-menu {
+  display: flex;
+  padding: 10px;
+  color: white;
+  padding-top:2em;
+}
+#contenedor-logo {
+  width: 5%;
+  background-position: center;
+  background-size: cover;
+  margin-left: 3em;
+}
+#logosvg {
+  width: 100%;
+}
+#contenedor-navegacion {
+  display: flex;
+  justify-content: end;
+  width: 80%;
+  text-align: center;
+  align-items: center;
+  font-family: Righteous-Regular;
+}
+ul,
+li {
+  list-style: none;
+}
+.ul-primero {
+  color: red;
+}
+.contenedormenu {
+  display: flex;
+  gap: 2em;
+  width: 100%;
+}
+.contenedormenu a {
+  text-decoration: none;
+  color: #8bac26;
+}
+.contenedormenu a:hover {
+  text-decoration-line: underline;
+  text-decoration-color: #ea5d79;
+  text-decoration-thickness: 5px;
+}
+.contenedormenu .subtema a :hover {
+  text-decoration-line: underline;
+  text-decoration-color: #f49b0e;
+  text-decoration-thickness: 5px;
+}
+.contenedormenu .ul-primero {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2em;
+  width: 100%;
+  position: relative;
+}
+.subtema {
+  z-index: 2;
+  padding-top: 1em;
+  margin: 0;
+  width: 100%;
+  gap: 2em;
+  position: absolute;
+  left: 0;
+  display: flex;
+  justify-content: right;
+  padding-top: 1em;
+}
+
+.prueba {
+  display: flex;
+}
+
+.div-subtema {
+  display: none;
+  padding-top: 1em;
+  font-size: 12px;
+
+}
+
+.subtema a li {
+  width: 100%;
+}
+.contenedormenu .prueba:hover .div-subtema {
+  display: block;
+}
+.botonesmenu {
+  padding-left: 40px;
+  color: #8bac26;
+  text-decoration: none;
+}
+#inisiosesion {
+  width: 10%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+#inisiosesion:hover´ {
+  text-decoration-line: underline;
+  text-decoration-color: ea5d79;
+  text-decoration-thickness: 5px;
+}
+#inisiosesion a .bx {
+  font-size: 30px;
+  color: #f49b0e;
+}
+#inisiosesion a .bx:hover {
+  color: #ea5d79;
+}
+/*--------------------finmenu-------------------------*/
+/*--------------------banner-------------------------*/
+#contenedor-banner {
+  width:100%;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+}
+#contenedor-animacion {
+  width: 50%;
+}
+
+.spline{
+  margin:0;
+  padding:0;
+  width:100%;
+}
+#contenedor-textobanner {
+  width: 50%;
+  text-align: center;
+  font-family: Righteous-Regular;
+  justify-content: center;
+}
+
+#texto-banner {
+  line-height: 1;
+  padding-top: 90px;
+  color: #f49b0e;
+  text-shadow: #ddd8d8 0 5px;
+  font-size: 40px;
+  animation: day 2s 1;
+}
+@keyframes day {
+  from {
+    transform: translateX(-600px);
+  }
+  to {
+    transform: translateX(10px);
+  }
+}
+#lupa {
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+.box {
+  color: white;
+  height: 30px;
+  display: flex;
+  cursor: pointer;
+  padding: 10px 20px;
+  background: #ea5d79;
+  border-radius: 30px;
+  align-items: center;
+  box-shadow: 12px 4px 5px 1px rgb(0 0 0 / 28%);
+}
+
+::placeholder {
+  color: white;
+  opacity: 1; /* Firefox */
+}
+.box:hover input {
+  width: 400px;
+}
+.box input {
+  color: white;
+  width: 0;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  transition: 0.8s;
+  background: transparent;
+}
+.box a .bx {
+  color: white;
+  font-size: 18px;
+}
+/*--------------------finbanner-------------------------*/
+/*--------------------temas-------------------------*/
+#titulotemas {
+  padding-top: 1em;
+  padding-bottom: 2em;
+  font-size: 3vw;
+  width: 100%;
+  text-align: center;
+  background-color: #8bac26;
+  color: #ffffff;
+  font-family: Righteous-Regular;
+  text-decoration-line: underline;
+  text-decoration-color: #ea5d79;
+  text-decoration-thickness: 9px;
+  text-underline-offset: 19px;
+  text-shadow: -3px 8px 7px #738b2a;
+}
+#contenedortemaunoydos {
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  background-color: #8bac26;
+}
+.contenedortemas {
+  width: 50%;
+  padding: 40px;
+}
+.temas {
+  width: 50%;
+  margin: auto;
+  align-items: center;
+  background: #f49b0e;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 10px 10px 65px -30px rgba(0, 0, 0, 0.88);
+}
+.iconodeltema {
+  width:8vw;
+  margin: auto;
+}
+.svgtema{
+  width:100%;
+}
+.titulotema {
+  text-align: center;
+  font-family: Righteous-Regular;
+  color: white;
+  font-size:1.7vw;
+}
+.parrafotema {
+  line-height: 1.2;
+  text-align: center;
+  color: white;
+  font-family:Nunito-ligth;
+  font-size: 1.2vw;
+
+}
+.botontema {
+  width:50% ;
+  height: 30px;
+  color: #8bac26;
+  background-color: WHITE;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  font-size: 25px;
+  margin: 10px;
+  padding-top: 3px;
+}
+.botontema:hover {
+  background-color:#ea5d79;
+  color:white;
+}
+.botontema a .bx {
+  font-size: 20vw;
+}
+#contenedortematresycuatro {
+  display: flex;
+  justify-content: center;
+  background-color: #8bac26;
+}
+/*--------------------fintemas-------------------------*/
+/*--------------------sub-------------------------*/
+#contenedorsubcripciones{
+  width:100%;
+  display:flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 2em;
+    margin-bottom: 5em;
+}
+#titulosub{
+  padding-bottom: 3em;
+  font-size: 3vw;
+  width: 100%;
+  text-align: center;
+  color:#f49b0e;
+    font-family: Righteous-Regular;
+    text-decoration-line: underline;
+    text-decoration-color:#f49b0e;
+    text-decoration-thickness: 9px;
+    text-underline-offset: 19px;
+  text-shadow: -3px 8px 7px #f7dfba;
+}
+.bordecolor{
+  display: flex;
+    flex-direction: column;
+  justify-content: space-between;
+  width:100%;
+  padding: 1em;
+  border-style: solid;
+  border-width: 5px;
+  border-image: linear-gradient(rgb(234,93,121), rgb(139,172,38), rgb(244,155,14)) 5;
+  border-radius:20px;
+  
+}
+.subcrip{
+  padding:1em;
+  display:flex;
+  background-color:white;
+  width:17%;
+  border-radius:20px;
+  box-shadow: 10px 10px 65px -30px rgba(0, 0, 0, 0.88);
+}
+
+.subcrip h1 {
+  font-size:1.5vw;
+  text-align:center;
+  font-family: Righteous-Regular;
+  color:#8bac26;
+}
+.iconosubs{
+  width:100%;
+  
+}
+.ilustracion-sub{
+  width:100%;
+}
+
+.subcrip h4 {
+  font-size:1vw;
+  text-align:center;
+  font-family: Righteous-Regular;
+  color:#8bac26;
+}
+.subcrip p{
+  font-family:Nunito-ligth;
+  font-size:1vw;
+  text-align:center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.boton{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  justify-items:center;
+}
+.bbtn{
+  font-family: Righteous-Regular;
+  color:white;
+  background-color:#8bac26;
+  width:100%;
+  height:30px;
+  font-size:1vw;
+  text-align:center;
+  border-radius:20px;
+  box-shadow: 0px 0px 44px -4px rgba(0,0,0,0.75);
+      display: flex;
+    align-items: center;
+      justify-content: center;
+  padding: 1em;
+}
+.subcrip2{
+  background-color:white;
+  width:18%;
+  border-radius:20px;
+  box-shadow: 0px 0px 44px -4px rgba(0,0,0,0.75);
+}
+
+.subcrip2 h1 {
+  font-size:1.5vw;
+  text-align:center;
+  font-family: Righteous-Regular;
+  color:#f49b0e;
+}
+.subcrip2 h4 {
+  font-size:1vw;
+  text-align:center;
+  font-family: Righteous-Regular;
+  color:#f49b0e;
+}
+.subcrip2 p{
+  font-family:Nunito-ligth;
+  font-size:1vw;
+  text-align:center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.boton2{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  justify-items:center;
+}
+.bbtn2{
+  
+  font-family: Righteous-Regular;
+  color:white;
+  background-color:#f49b0e;
+  width:100%;
+  height:30px;
+  font-size:1vw;
+  text-align:center;
+  border-radius:20px;
+  box-shadow: 0px 0px 44px -4px rgba(0,0,0,0.75);
+ display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+}
+.subcrip3{
+  background-color:white;
+  width:18%;
+  border-radius:20px;
+  box-shadow: 0px 0px 44px -4px rgba(0,0,0,0.75);
+}
+
+.subcrip3 h1 {
+  font-size:1.5vw;
+  text-align:center;
+  font-family: Righteous-Regular;
+  color:#ea5d79;
+}
+.subcrip3 h4 {
+  font-size:1vw;
+  text-align:center;
+  font-family: Righteous-Regular;
+  color:#ea5d79;
+}
+.subcrip3 p{
+  font-family:Nunito-ligth;
+  font-size:1vw;
+  text-align:center;
+}
+.boton3{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  justify-items:center;
+}
+.bbtn3 {
+  font-family: Righteous-Regular;
+  color:white;
+  background-color:#ea5d79;
+  width:100%;
+  height:30px;
+  font-size:1vw;
+  text-align:center;
+  border-radius:20px;
+  box-shadow: 0px 0px 44px -4px rgba(0,0,0,0.75);
+      display: flex;
+    align-items: center;
+      justify-content: center;
+  padding: 1em;
+}
+/*--------------------finsub-------------------------*/
+/*--------------------nosotros-------------------------*/
+#nosotros {
+  width: 100%;
+}
+#contenedornosotros {
+  width: 100%;
+}
+#titulonosotros {
+  padding-top: 1em;
+    padding-bottom: 1em;
+    font-size: 3vw;
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    font-family: Righteous-Regular;
+    text-decoration-line: underline;
+    text-decoration-color: #8bac26;
+    text-decoration-thickness: 9px;
+    text-underline-offset: 19px;
+    background-color: rgb(234,93,121);
+    text-shadow: -3px 8px 7px #893445;
+}
+#mision {
+  display: flex;
+  background-color: #ea5d79;
+}
+#titulomision {
+  color: white;
+  font-family: Righteous-Regular;
+  font-size: 9vw;
+  padding-bottom: 10px;
+  text-shadow: -3px 8px 7px #893445;
+}
+#parrafomision {
+  color: white;
+font-family:Nunito-ligth;
+  font-size: 1.3vw;
+}
+#iconomision {
+  padding: 7em;
+}
+#iconovision {
+  padding: 7em;
+  width: 50%;
+}
+.ilustracionmision{
+  width:100%;
+}
+#textomision {
+  width: 50%;
+  background-color: #ea5d79;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  padding: 3em;
+  font-family: Nunito Sans Normal light;
+}
+#iconomision {
+  width: 50%;
+}
+.ilustracionvision{
+  width:100%;
+}
+#vision {
+  display: flex;
+  background-color: #f49b0e;
+}
+#textovision {
+  width: 50%;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 3em;
+}
+#titulovision {
+  color: white;
+  font-family: Righteous-Regular;
+  padding-bottom: 10px;
+  font-size: 9vw;
+  text-shadow: -3px 8px 7px rgba(172, 88, 11, 0.62);
+}
+#parrafovision {
+  color: white;
+  font-family:Nunito-ligth;
+  font-size: 1.3vw;
+}
+/*--------------------finnosotros-------------------------*/
+/*--------------------fooder-------------------------*/
+#footer {
+  width: 100%;
+  background-color: f49b0e;
+  justify-content: center;
+  font-family: Righteous-Regular;
+  font-size:3vw;
+}
+#contenedorfooter {
+  align-items: center;
+  background-color: white;
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  justify-content: space-around;
+  border-radius: 30px 30px 0px 0px;
+  box-shadow: 0px -14px 54px -10px rgba(0, 0, 0, 0.48);
+  display: flex;
+  flex-wrap: wrap;
+}
+#logoyredes {
+  background-color: 0;
+  width: 80%;
+}
+#contenedortextosdecontacto {
+  display: flex;
+  flex-wrap: wrap;
+  width: 75%;
+  font-size: 1vw;
+}
+#textosnavegacion {
+  width: 40%;
+  margin-left: 3em;
+  color: #ea5d79;
+}
+.linktextonavegacion{
+  color: #ea5d79;
+}
+.linktextonavegacion:hover{
+  color:#7dae2a;
+}
+#textoscontacto {
+  width: 40%;
+  margin-left: 3em;
+  color: #ea5d79;
+}
+#eslogan {
+  width: 30%;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #7dae2a;
+  color: white;
+  border-radius: 20px;
+  font-size: 1vw;
+}
+#prueva {
+  width: 15%;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+#contenedorlogosderedessociales {
+  font-size: 30px;
+  width: 100%;
+  color: #ea5d79;
+  display: flex;
+  gap: 1em;
+  margin-bottom: 15px;
+  justify-content: center;
+}
+.logosderedessociales {
+  font-size: 30px;
+  color: #ea5d79;
+}
+.logosderedessociales:hover{
+  color: #f49b0e;
+}
+.pruevarotar {
+  inline-size: fit-content;
+  transform: rotate(-90deg);
+  width: 10%;
+  height: none;
+  background-color: red;
+}
+/*--------------------finfooder-------------------------*/
+@media only screen and (max-width: 576px){
+  .contenedor-animacion{
+    display:none;
+  }
+  #animation_container{
+    display:none;
+  }
+  #xd{
+    margin-left:0em;
+    margin-right:0em;
+  }
+ 
+  #contenedor-menu{
+    flex-direction:column;
+    align-items: center;
+  }
+  #contenedor-navegacion{
+    flex-direction:column;
+    gap:none;
+  }
+  .contenedormenu{
+    flex-direction:column;
+  }
+  .contenedormenu .ul-primero{
+    flex-direction:column;
+    display:column;
+    gap: 5px;
+  }
+  .subtema {
+    font-size: 2.5vw;
+    z-index: 2;
+    padding-top: 1em;
+    gap: 2em;
+    position: absolute;
+    left: 0;
+    display:contents;
+    padding-top: 1em;
+}
+  .subtema a :hover {
+  text-decoration-line:0;
+  text-decoration-color:transparent;
+  text-decoration-thickness:0;
+    color:black;
+}
+  #contenedor-logo{
+        width: 12%;
+        margin-left: 0em;
+  }
+  #inisiosesion {
+    padding-top: 1em;
+}
+  .prueba{
+    display:block;
+  }
+  #contenedor-banner{
+    flex-direction:column;
+  }
+  #texto-banner{
+   padding-top: 10px;
+    font-size: 5vw;
+  }
+  #contenedor-textobanner{
+    width:100%;
+  }
+  #contenedor-animacion{
+    width:100%;
+    display: none;
+  }
+  #contenedortemaunoydos{
+   flex-direction:column; 
+  }
+  #titulotemas{
+    font-size:8vw;
+  }
+  .titulotema{
+    font-size:2.9vw;
+    margin-bottom: 5px;
+  }
+  .iconodeltema{
+    width:19vw;
+  }
+  .parrafotema{
+        font-size: 2.2vw;
+    line-height: 1.2;
+  }
+  .contenedortemas{
+    width:100%;
+  }
+  #contenedortematresycuatro{
+   flex-direction:column; 
+  }
+  #contenedorsubcripciones{
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
+  .subcrip{
+    width:60%;
+  }
+  .subcrip h1 {
+    font-size: 5vw;
+  }
+  .subcrip h4 {
+    font-size: 3vw;
+  }
+  .subcrip p {
+    font-size: 2vw;
+  }
+  .bbtn {
+    font-size: 3vw;
+  }
+  .bbtn2 {
+    font-size: 3vw;
+  }
+  .bbtn3 {
+    font-size: 3vw;
+  }
+  .bordecolor{
+    border-width: 3px;
+  }
+  #titulosub{
+    font-size: 8vw;
+    padding-bottom: 1em;
+  }
+  
+  #titulonosotros{
+    font-size: 8vw;
+  }
+  #titulomision{
+    font-size: 16vw;
+  }
+  #parrafomision {
+    font-size: 3vw;
+    text-align: justify;
+  }
+  #titulovision{
+    font-size: 16vw;
+  }
+  #parrafovision{
+    font-size: 3vw;
+    text-align: justify;
+  }
+  #mision{
+    flex-direction:column;
+  }
+  #vision{
+    flex-direction:column;
+  }
+  #textomision{
+    width:100%;
+    padding-top: 2em;
+  }
+  #textovision{
+    width:100%;
+    padding-top: 2em;
+  }
+  #iconovision{
+    width:100%;
+    padding: 2em;
+  }
+  #iconomision{
+    width:100%;
+    padding: 2em;
+  }
+  #contenedorfooter{
+  flex-direction:column;
+  }
+  #contenedortextosdecontacto {
+    font-size: 3vw;
+    }
+  #textosnavegacion{
+    width:100%;
+    text-align:center;
+    margin-left: 0;
+  }
+  #textoscontacto{
+    width:100%;
+    text-align:center;
+    padding-top:1em;
+    margin-left:0;
+  }
+    #eslogan {
+    width: 50%;
+    font-size: 3vw;
+}
+  #contenedorlogosderedessociales{
+    flex-direction:column;
+    align-items: center;
+  }
+  }
+@media only screen and (max-width: 768px){
+  .contenedor-animacion{
+    display:none;
+  }
+  #animation_container{
+    display:none;
+  }
+  .subtema a :hover {
+  text-decoration-line:0;
+  text-decoration-color:transparent;
+  text-decoration-thickness:0;
+    color:black;
+}
+    .subtema {
+    font-size: 1.9vw;
+    z-index: 2;
+    padding-top: 1em;
+    gap: 2em;
+    position: absolute;
+    left: 0;
+    display:contents;
+    padding-top: 1em;
+}
+  #xd{
+    margin-left:0em;
+    margin-right:0em;
+  }
+  
+  #contenedor-menu{
+    flex-direction:column;
+    align-items: center;
+  }
+  #contenedor-navegacion{
+    flex-direction:column;
+    gap:none;
+  }
+  #contenedor-logo{
+    margin-left: 0em;
+    width:12%;
+  }
+  .contenedormenu{
+    flex-direction:column;
+  }
+  .contenedormenu .ul-primero{
+    flex-direction:column;
+    display:column;
+    gap: 5px;
+  }
+  .prueba{
+    display:block;
+  }
+  #contenedor-banner{
+    
+    flex-direction:column;
+   
+  }
+  
+  .spline{
+
+  width:20%;
+}
+  #texto-banner{
+   padding-top: 10px; 
+  }
+  #contenedor-textobanner{
+    width:100%;
+  }
+  #contenedor-animacion{
+    display:flex;
+        align-items: center;
+    justify-content: center;
+    width:100%;
+  }
+  #vision{
+    flex-direction: column-reverse;
+    
+  }
+  #contenedortemaunoydos{
+   flex-direction:column; 
+  }
+  #titulotemas{
+    font-size:8vw;
+  }
+  .titulotema{
+    font-size:2.9vw;
+    margin-bottom: 5px;
+  }
+  .iconodeltema{
+    width:19vw;
+  }
+  .parrafotema{
+    font-size: 2.2vw;
+    line-height: 1.2;
+    text-align: justify;
+  }
+  .contenedortemas{
+    width:100%;
+  }
+  #contenedortematresycuatro{
+   flex-direction:column; 
+  }
+  #contenedorsubcripciones{
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
+  .subcrip{
+    width:60%;
+  }
+  .subcrip h1 {
+    font-size: 5vw;
+  }
+  .subcrip h4 {
+    font-size: 3vw;
+  }
+  .subcrip p {
+    font-size: 2vw;
+  }
+  .bbtn {
+    font-size: 3vw;
+  }
+  .bbtn2 {
+    font-size: 3vw;
+  }
+  .bbtn3 {
+    font-size: 3vw;
+  }
+  .bordecolor{
+    border-width: 3px;
+  }
+  #titulosub{
+    font-size: 8vw;
+    padding-bottom: 1em;
+  }
+  #titulonosotros{
+    font-size: 8vw;
+  }
+  #titulomision{
+    font-size: 16vw;
+  }
+  #parrafomision {
+    font-size: 3vw;
+    text-align: justify;
+  }
+  #titulovision{
+    font-size: 16vw;
+  }
+  #parrafovision{
+    font-size: 3vw;
+    text-align: justify;
+  }
+  #mision{
+    flex-direction:column;
+  }
+  #textomision{
+    width:100%;
+    padding-top: 2em;
+  }
+  #textovision{
+    width:100%;
+    padding-top: 2em;
+  }
+  #iconovision{
+    width:100%;
+    padding: 2em;
+  }
+  #iconomision{
+    width:100%;
+    padding: 2em;
+  }
+  #contenedorfooter{
+  flex-direction:column;
+  }
+  #contenedortextosdecontacto {
+    font-size: 3vw;
+    }
+  #textosnavegacion{
+    width:100%;
+    text-align:center;
+    margin-left: 0;
+  }
+  #textoscontacto{
+    width:100%;
+    text-align:center;
+    padding-top:1em;
+    margin-left:0;
+  }
+    #eslogan {
+    width: 50%;
+    font-size: 3vw;
+}
+  #contenedorlogosderedessociales{
+    flex-direction:column;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 1200px){
+  #xd{
+    margin-left:0em;
+    margin-right:0em;
+  }
+}

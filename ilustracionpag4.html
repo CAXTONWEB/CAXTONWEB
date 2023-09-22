@@ -1,0 +1,592 @@
+<!--Definición tipo de documento-->
+<!DOCTYPE html>
+<html lang="sp">
+  <head>
+    <!--Sirve para adicionar cáracteres especiales-->
+    <meta charset="utf-8" />
+
+    <!--Sirve para reconocer el ancho de pantalla-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--Sirve para poner el icono de la pestaña-->
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+
+    <!--Sirve para poner el icono de la pestaña-->
+    <title>PRISMA/PLATAFORMADEAPRENDISAJE</title>
+    <!-- Link Swiper's CSS -->
+    <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+    <script src="ANIMACIONCAXTON.js"></script>
+    <script>
+      var canvas,
+        stage,
+        exportRoot,
+        anim_container,
+        dom_overlay_container,
+        fnStartAnimation;
+      function init() {
+        canvas = document.getElementById("canvas");
+        anim_container = document.getElementById("animation_container");
+        dom_overlay_container = document.getElementById(
+          "dom_overlay_container"
+        );
+        var comp = AdobeAn.getComposition("A484C425781D594597BC1162AC34D94D");
+        var lib = comp.getLibrary();
+        var loader = new createjs.LoadQueue(false);
+        loader.addEventListener("fileload", function (evt) {
+          handleFileLoad(evt, comp);
+        });
+        loader.addEventListener("complete", function (evt) {
+          handleComplete(evt, comp);
+        });
+        var lib = comp.getLibrary();
+        loader.loadManifest(lib.properties.manifest);
+      }
+      function handleFileLoad(evt, comp) {
+        var images = comp.getImages();
+        if (evt && evt.item.type == "image") {
+          images[evt.item.id] = evt.result;
+        }
+      }
+      function handleComplete(evt, comp) {
+        //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+        var lib = comp.getLibrary();
+        var ss = comp.getSpriteSheet();
+        var queue = evt.target;
+        var ssMetadata = lib.ssMetadata;
+        for (i = 0; i < ssMetadata.length; i++) {
+          ss[ssMetadata[i].name] = new createjs.SpriteSheet({
+            images: [queue.getResult(ssMetadata[i].name)],
+            frames: ssMetadata[i].frames,
+          });
+        }
+        exportRoot = new lib.ANIMACIONCAXTON();
+        stage = new lib.Stage(canvas);
+        //Registers the "tick" event listener.
+        fnStartAnimation = function () {
+          stage.addChild(exportRoot);
+          createjs.Ticker.framerate = lib.properties.fps;
+          createjs.Ticker.addEventListener("tick", stage);
+        };
+        //Code to support hidpi screens and responsive scaling.
+        AdobeAn.makeResponsive(false, "both", false, 1, [
+          canvas,
+          anim_container,
+          dom_overlay_container,
+        ]);
+        AdobeAn.compositionLoaded(lib.properties.id);
+        fnStartAnimation();
+      }
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    
+    <!-- Sirve para incluir la hoja de estilos style.css -->
+    <link rel="stylesheet" href="pag1.css" />
+    <!-- Sirve para incluir iconos externosde fonts.css -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body onload="init();"  id="bodyinicio">
+    <main id="xd">
+      <!-------------------rosa/ea5d79/naranja/f49b0e/verde/8bac26-------------------->
+      <!-------------------MENU-------------------->
+      <div id="contenedorgeneral" data-aos="fade-down">
+        <div id="contenedor-menu">
+          <div id="contenedor-logo">
+            <a href="index.html">
+              <img
+                class="logosvg"
+                src="https://cdn.glitch.global/6981d5f7-b02a-4bf3-b778-6ab7eea7c0a0/logoweb.svg?v=1691757150461"
+                alt="Logo de la empresa"
+              />
+            </a>
+          </div>
+          <nav id="contenedor-navegacion">
+            <div class="contenedormenu">
+              <ul class="ul-primero">
+                <li class="prueba">
+                  <a href="#">MENÚ</a>
+                  <div class="div-subtema">
+                    <ul class="subtema">
+                      <a href="pre-produccionpag1.html"
+                        ><li>PRE-PRODUCCIÓN</li></a
+                      >
+                      <a href="produccionpag2.html"><li>PRODUCCIÓN</li></a>
+                      <a href="post-produccionpag3.html"
+                        ><li>POST-PRODUCCIÓN</li></a
+                      >
+                      <a href="ilustracionpag4.html"><li>ILUSTRACIÓN</li></a>
+                    </ul>
+                  </div>
+                </li>
+                <li><a href="index.html#contenedorsubcripciones"> SUSCRIPCIÓN</a></li>
+                <li><a href="index.html#nosotros">NOSOTROS</a></li>
+              </ul>
+            </div>
+          </nav>
+          <div id="inisiosesion">
+            <a href="login.html">
+              <i class="bx bx-user-circle"></i>
+            </a>
+          </div>
+        </div>
+        <!-------------------FINMENU-------------------->
+        <!-------------------BANNER-------------------->
+        <header id="contenedor-banner">
+          <div id="contenedor-textobanner">
+            <h1 id="texto-banner">
+              BIENVENIDO A CAXTON <br />APRENDE SOBRE MULTIMEDIA
+            </h1>
+            <div id="lupa">
+              <div class="box">
+                <input type="text" placeholder="BUSCAR" />
+                <a href="#">
+                  <i class="bx bx-search"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div id="contenedor-animacion">
+            <div
+              id="animation_container"
+              style="
+                background-color: rgba(255, 255, 255, 0);
+                width: 500px;
+                height: 318px;
+              "
+            >
+              <canvas
+                id="canvas"
+                width="500"
+                height="318"
+                style="
+                  position: absolute;
+                  display: block;
+                  background-color: rgba(255, 255, 255, 0);
+                "
+              ></canvas>
+              <div
+                id="dom_overlay_container"
+                style="
+                  pointer-events: none;
+                  overflow: hidden;
+                  width: 500px;
+                  height: 318px;
+                  position: absolute;
+                  left: 0px;
+                  top: 0px;
+                  display: block;
+                "
+              ></div>
+            </div>
+          </div>
+        </header>
+      </div>
+      <!-------------------FINBANNER----------   xlink:href="some-id" x="5" y="5" />.---------->
+      <!------------pag1--------->
+      
+      <section id="indice" >
+        <h1 id="titulotemario">TEMARIO</h1>
+          <br />
+          <br />
+          <div class="info">
+            <div>
+              <center>
+              <a href="#imagenes"><img
+                class="cajaimg"
+                src="images/Imagenes.png"
+              />
+            </a>
+          </center>
+              <p><b>IMÁGENES</b></p>
+              <br>
+                <h5 class="teximg">Aquí encontraras ejemplos y las estructuras de estos temas: Ilustración, fundamentos del diseño, vectores, trazos, maya vectorial, diagramación, retoques, montajes, manejo de texto edición de fotografía, máscara de transición, zoom in- zoom out, dezplazamiento de texto.</h5>
+            </div>
+            <div>
+             
+              <center><a href="#infografias"><img
+                class="cajaimg"
+                src="images/Infografías.png"
+              />
+            </a>
+          </center>
+              <p><b>INFOGRAFÍAS</b></p>
+              <br>
+              <h5 class="teximg">Aquí encontrarás una amplia variedad de información sobre los siguientes temas: Teoría del color.</h5>
+            </div>
+      
+            <div>
+            
+              <center><a href="#videos"><img
+                class="cajaimg"
+                src="images/Videos.png"
+              />
+            </a>
+          </center>
+              <p><b>VIDEOS</b></p>
+              <br>
+              <h5 class="teximg">Aquí te ofrecemos una explicación en video sobre: Vectores, máscara de recorte, troquelado, empaquetar proyecto, filtro de fotografía, precomponer, máscara de texto y transformaciones básicas , donde encontrarás información esencial sobre esta herramienta.</h5>
+            </div>
+
+            <div>
+            
+              <center><a href="#presentacion"><img
+                class="cajaimg"
+                src="images/Presentación.png"
+              />
+            </a>
+          </center>
+              <p><b>PRESENTACIÓN</b></p>
+              <br>
+              <h5 class="teximg">Aquí te ofrecemos una detallada presentación sobre principios del diseño, donde encontrarás información esencial sobre esta herramienta crucial en el proceso de producción audiovisual.</h5>
+            </div>
+
+          </div>
+        </section>
+
+
+
+     <section id="imagenes" >
+      <h1 class="tituloimagenes">IMÁGENES</h1>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img class="imgimg" src="https://cdn.glitch.global/6981d5f7-b02a-4bf3-b778-6ab7eea7c0a0/Ilustraci%C3%B3n.jpg?v=1695128761457" width="600px" height="400px" />
+      </div>
+      <div class="swiper-slide">
+        <img class="imgimg" src="https://cdn.glitch.global/6981d5f7-b02a-4bf3-b778-6ab7eea7c0a0/Fundamentos%20del%20dise%C3%B1o.jpg?v=1695128761030"  width="600px" height="400px"/>
+      </div>
+      <div class="swiper-slide">
+        <img class="imgimg" src="https://cdn.glitch.global/6981d5f7-b02a-4bf3-b778-6ab7eea7c0a0/Vectores.jpg?v=1695128764475" width="600px" height="400px"/>
+      </div>
+      <div class="swiper-slide">
+        <img class="imgimg" src="https://cdn.glitch.global/6981d5f7-b02a-4bf3-b778-6ab7eea7c0a0/Trazos.jpg?v=1695128764063" width="600px" height="400px"/>
+      </div>
+      <div class="swiper-slide">
+        <img class="imgimg" src="https://cdn.glitch.global/6981d5f7-b02a-4bf3-b778-6ab7eea7c0a0/Maya%20vectorial.jpg?v=1695128762893" width="600px" height="400px"/>
+      </div>
+      <div class="swiper-slide">
+        <img class="imgimg" src="https://cdn.glitch.global/6981d5f7-b02a-4bf3-b778-6ab7eea7c0a0/Diagramaci%C3%B3n.jpg?v=1695128765836" width="600px" height="400px"/>
+      </div>
+      <div class="swiper-slide">
+        <img class="imgimg" src="https://cdn.glitch.global/6981d5f7-b02a-4bf3-b778-6ab7eea7c0a0/Retoques.jpg?v=1695128763653" width="600px" height="400px"/>
+      </div>
+      <div class="swiper-slide">
+        <img class="imgimg" src="https://cdn.glitch.global/6981d5f7-b02a-4bf3-b778-6ab7eea7c0a0/Montajes.jpg?v=1695128763254" width="600px" height="400px"/>
+      </div>
+      <div class="swiper-slide">
+        <img class="imgimg" src="https://cdn.glitch.global/6981d5f7-b02a-4bf3-b778-6ab7eea7c0a0/Manejo%20de%20texto.jpg?v=1695128761938" width="600px" height="400px"/>
+      </div>
+      <div class="swiper-slide">
+        <img class="imgimg" src="https://cdn.glitch.global/6981d5f7-b02a-4bf3-b778-6ab7eea7c0a0/Edici%C3%B3n%20de%20fotograf%C3%ADa.jpg?v=1695128766326" width="600px" height="400px"/>
+      </div>
+      <div class="swiper-slide">
+        <img class="imgimg" src="https://cdn.glitch.global/6981d5f7-b02a-4bf3-b778-6ab7eea7c0a0/M%C3%A1scara%20de%20transici%C3%B3n.jpg?v=1695128762469" width="600px" height="400px"/>
+      </div>
+      <div class="swiper-slide">
+        <img class="imgimg" src="https://cdn.glitch.global/6981d5f7-b02a-4bf3-b778-6ab7eea7c0a0/Zoom%20in%20-%20zoom%20out.jpg?v=1695128764892" width="600px" height="400px"/>
+      </div>
+      <div class="swiper-slide">
+        <img class="imgimg" src="https://cdn.glitch.global/6981d5f7-b02a-4bf3-b778-6ab7eea7c0a0/Desplazamiento%20de%20texto.jpg?v=1695128765386" width="600px" height="400px"/>
+      </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-scrollbar"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      centeredSlides: false,
+      slidesPerGroupSkip: 1,
+      grabCursor: true,
+      keyboard: {
+        enabled: true,
+      },
+      breakpoints: {
+        769: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+        },
+      },
+      scrollbar: {
+        el: ".swiper-scrollbar",
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+       
+      </section>
+      
+      <h1 class="tituloinfografías">INFOGRAFÍAS</h1>
+      <section id="infografias">
+        
+    <center> <div class="swiper mySwiper3">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <embed src="https://cdn.glitch.global/6981d5f7-b02a-4bf3-b778-6ab7eea7c0a0/Teor%C3%ADa%20de%20color.pdf?v=1695103448342"  type="application/pdf"   style="position: relative; min-height: 400px; max-width: 100%;"/>
+      </div>
+    </div>
+      <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+  </div>
+        </center>
+        
+  <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+        <!-- Initialize Swiper -->
+        <script>
+          var swiper = new Swiper(".mySwiper3", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            keyboard: {
+              enabled: true,
+            },
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+          });
+        </script>
+        
+        
+      </section>
+      
+
+      <h1 class="titulovideos">VIDEO</h1>
+      <section id="videos">
+        <center><!-- Swiper -->
+  <div class="swiper mySwiper4">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <video width="100%"  height="400px" controls>
+            <source src="https://cdn.glitch.global/6981d5f7-b02a-4bf3-b778-6ab7eea7c0a0/Vectores.mp4?v=1695129721208" type="video/mp4"></video>
+      </div>
+      <div class="swiper-slide">
+        <video width="100%"  height="400px" controls>
+            <source src="https://cdn.glitch.global/6981d5f7-b02a-4bf3-b778-6ab7eea7c0a0/M%C3%A1scara%20de%20recorte.mp4?v=1695129998531" type="video/mp4"></video>
+      </div>
+      <div class="swiper-slide">
+         <video width="100%"  height="400px" controls>
+            <source src="https://cdn.glitch.me/6981d5f7-b02a-4bf3-b778-6ab7eea7c0a0/Troquelado.mp4?v=1695130432101" type="video/mp4"></video>
+      </div>
+      <div class="swiper-slide">
+         <video width="100%"  height="400px" controls>
+            <source src="https://cdn.glitch.me/6981d5f7-b02a-4bf3-b778-6ab7eea7c0a0/Empaquetar%20after%20effects.mp4?v=1695130040171" type="video/mp4"></video>
+      </div>
+      <div class="swiper-slide">
+         <video width="100%"  height="400px" controls>
+            <source src="https://cdn.glitch.me/6981d5f7-b02a-4bf3-b778-6ab7eea7c0a0/filtro%20fotografia%20photoshop.mp4?v=1695130383052" type="video/mp4"></video>
+      </div>
+      <div class="swiper-slide">
+        <video width="100%"  height="400px" controls>
+            <source src="https://cdn.glitch.me/6981d5f7-b02a-4bf3-b778-6ab7eea7c0a0/precomponer.mp4?v=1695130400127" type="video/mp4"></video>
+      </div>
+      <div class="swiper-slide">
+         <video width="100%"  height="400px" controls>
+            <source src="https://cdn.glitch.me/6981d5f7-b02a-4bf3-b778-6ab7eea7c0a0/mascara%20de%20texto%20illustrator.mp4?v=1695130414898" type="video/mp4"></video>
+      </div>
+      <div class="swiper-slide">
+         <video width="100%"  height="400px" controls>
+            <source src="https://cdn.glitch.me/6981d5f7-b02a-4bf3-b778-6ab7eea7c0a0/trasnformaciones%20basicas%20after%20effects.mp4?v=1695130447992" type="video/mp4"></video>
+      </div>
+    </div>
+    <div class="swiper-pagination4"></div>
+  </div>
+</center>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper4", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+      pagination: {
+        el: ".swiper-pagination4",
+      },
+    });
+  </script>
+      
+      </section>
+      
+      <section id="presentacion">
+        <h1 class=" titulopresentacion">PRESENTACIONES</h1>
+       <!-- Swiper -->
+        <center>
+  <div class="swiper mySwiper4">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="container-wrapper-genially" style="position: relative; min-height: 400px; max-width: 100%;"><video class="loader-genially" autoplay="autoplay" loop="loop" playsinline="playsInline" muted="muted" style="position: absolute;top: 45%;left: 50%;transform: translate(-50%, -50%);width: 80px;height: 80px;margin-bottom: 10%"><source src="https://static.genial.ly/resources/loader-default.mp4" type="video/mp4" />Your browser does not support the video tag.</video><div id="650d09f84b3b670011f271f8" class="genially-embed" style="margin: 0px auto; position: relative; height: auto; width: 100%;"></div></div><script>(function (d) { var js, id = "genially-embed-js", ref = d.getElementsByTagName("script")[0]; if (d.getElementById(id)) { return; } js = d.createElement("script"); js.id = id; js.async = true; js.src = "https://view.genial.ly/static/embed/embed.js"; ref.parentNode.insertBefore(js, ref); }(document));</script>
+      </div>
+      
+    </div>
+  </div>
+</center>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper4", {});
+  </script> 
+      </section>
+      
+
+
+      <section id="programasadobe">
+        <h1 class="tituloprogramas">PROGRAMAS</h1>
+            <section id="cartas" class="contenedor-tarjetas">
+                  
+        <div class="tarjeta">
+          <img class="photoshop"
+            src="https://cdn.glitch.global/6981d5f7-b02a-4bf3-b778-6ab7eea7c0a0/png%20photoshop.png?v=1695050271298"
+          />
+          <div class="descripcion">
+            <h3>Software de edición de imágenes líder en la industria.</h3>
+          </div>
+        </div>
+        <div class="tarjeta">
+          <img class="illustrator"
+            src="https://cdn.glitch.global/6981d5f7-b02a-4bf3-b778-6ab7eea7c0a0/png%20illustrator.png?v=1695050270825"
+          />
+          <div class="descripcion">
+            <h3>Herramienta de diseño vectorial para crear gráficos y logotipos.</h3>
+            
+          </div>
+        </div>
+        <div class="tarjeta">
+          <img class="after-effects"
+            src="https://cdn.glitch.global/6981d5f7-b02a-4bf3-b778-6ab7eea7c0a0/png%20after%20.png?v=1695050271842"
+          />
+          <div class="descripcion">
+            <h3>Software para crear efectos visuales y animaciones en video</h3>
+          </div>
+        </div>
+               <div class="tarjeta">
+          <img class="premier"
+            src="https://cdn.glitch.global/6981d5f7-b02a-4bf3-b778-6ab7eea7c0a0/png%20premier.png?v=1695050272355" 
+          />
+          <div class="descripcion">
+            <h3>Programa de edición de video profesional.</h3>
+          </div>
+        </div>   
+      </section>
+      </section>
+      
+      <!------------pag1--------->
+
+      <!-------------------FOODER-------------------->
+      <footer id="footer">
+        <div id="contenedorfooter" data-aos="fade-up">
+          <div id="prueva">
+            <div id="logoyredes">
+              <div class="logofooter">
+                <a href="index.html">
+                  <img
+                    src="https://cdn.glitch.global/6981d5f7-b02a-4bf3-b778-6ab7eea7c0a0/logoweb.svg?v=1691757150461
+             "
+                    alt="Logo de la empresa"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div id="contenedortextosdecontacto">
+            <div id="textosnavegacion">
+              <h3>
+                <a class="linktextonavegacion" href="pre-produccionpag1.html"
+                  >PRE-PRODUCCIÓN</a
+                >
+              </h3>
+              <h3>
+                <a class="linktextonavegacion" href="produccionpag2.html"
+                  >PRODUCCIÓN</a
+                >
+              </h3>
+              <h3>
+                <a class="linktextonavegacion" href="post-produccionpag3.html"
+                  >POST-PRODUCCIÓN</a
+                >
+              </h3>
+              <h3>
+                <a class="linktextonavegacion" href="ilustracionpag4.html"
+                  >ILLUSTRACIÓN</a
+                >
+              </h3>
+            </div>
+            <div id="textoscontacto">
+              <h3>PACAXTON@GMAIL.COM</h3>
+              <h3>3214825894</h3>
+              <h3>CALLE 10 NO. 9 - 78 CENTRO</h3>
+            </div>
+          </div>
+          <div id="eslogan">CREA COMPARTE IMPACTA</div>
+          <div id="contenedorlogosderedessociales">
+            <a class="logosderedessociales" href="https://www.instagram.com/"
+              ><i class="bx bxl-instagram"></i
+            ></a>
+            <a class="logosderedessociales" href="https://twitter.com/?lang=es"
+              ><i class="bx bxl-twitter"></i
+            ></a>
+            <a
+              class="logosderedessociales"
+              href="https://m.facebook.com/login/?locale=es_ES&refsrc=deprecated&_rdc=2&_rdr"
+              ><i class="bx bxl-facebook-circle"></i
+            ></a>
+          </div>
+        </div>
+      </footer>
+      <!-------------------FINFOODER-------------------->
+      <script
+        type="module"
+        src="https://unpkg.com/@splinetool/viewer@0.9.416/build/spline-viewer.js"
+      ></script>
+      <script
+        type="module"
+        src="https://unpkg.com/@splinetool/viewer@0.9.420/build/spline-viewer.js"
+      ></script>
+    </main>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+      });
+    </script>
+  </body>
+</html>

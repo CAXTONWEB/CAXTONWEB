@@ -1,0 +1,117 @@
+<!--Definición tipo de documento-->
+<!DOCTYPE html>
+<html lang="sp">
+  <head>
+    <!--Sirve para adicionar cáracteres especiales-->
+    <meta charset="utf-8" />
+
+    <!--Sirve para reconocer el ancho de pantalla-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--Sirve para poner el icono de la pestaña-->
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+
+    <!--Sirve para poner el icono de la pestaña-->
+    <title>PRISMA/PLATAFORMADEAPRENDISAJE</title>
+    <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+<script src="ANIMACION ANIMATE.js"></script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("09404AB4B1871641BE53BADAF71A4D27");
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib.ANIMACIONANIMATE();
+	stage = new lib.Stage(canvas);	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.framerate = lib.properties.fps;
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	AdobeAn.makeResponsive(false,'both',false,1,[canvas,anim_container,dom_overlay_container]);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+</script>
+
+    <!-- Sirve para incluir la hoja de estilos style.css -->
+    <link rel="stylesheet" href="stylelogin.css" />
+    <!-- Sirve para incluir iconos externosde fonts.css -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <!-- iconos externos de boxicone -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  </head>
+  <body onload="init();">
+    <div class="warpper" data-aos="fade-down">
+      <div id="contenedorilustracion">
+        <div id="animation_container" style="background-color:rgba(255, 255, 255, 0.00); width:400px; height:420px">
+          <canvas id="canvas" width="400" height="420" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 0.00);"></canvas>
+          <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:400px; height:4200px; position: absolute; left: 0px; top: 0px; display: block;">
+          </div>
+        </div>
+      </div>
+      <div class="contenedorformulario">
+        <form action="">
+          <h1 id="textotitulo">INICIAR SESION</h1>
+          <div class="input-box">
+            <input type="text" placeholder="CORREO ELECTRONICO" required />
+          </div>
+          <div class="input-box">
+            <input type="contraseña" placeholder="CONTRASEÑA" required />
+          </div>
+          <div class="rememeber-forgot">
+            <label> <input type="checkbox" /> RECORDAR</label>
+            <a href="#">OLVIDE MI CONTRASEÑA</a>
+          </div>
+          <div class="centrarbtn">
+            <button type="subnit" class="btn">INGRESAR</button>
+          </div>
+
+          <div class="REGISTER-LINK">
+            
+            <a href="dates.html"> REGISTRARME</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="homecontenedor" data-aos="fade-up">
+      <a href="index.html"><i class="bx bx-home"></i></a>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+   AOS.init({
+     duration: 1000,
+   });
+</script>
+  </body>
+</html>
